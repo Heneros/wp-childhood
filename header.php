@@ -33,41 +33,35 @@
                         <div class="header__contacts">
                             <div class="header__contacts-item">
                                 <img src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/svg/email.svg" alt="почта" class="header__contacts-logo">
-                                <a href="<?php the_field('mail', 35); ?>" class="header__contacts-mail"><?php the_field('mail', 35); ?></a>
+                                <a href="<?php the_field('mail', 159); ?>" class="header__contacts-mail"><?php the_field('mail', 159); ?></a>
                             </div>
                             <div class="header__contacts-item">
                                 <img src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/svg/phone.svg" alt="телефон" class="header__contacts-logo">
                                 <div class="header__contacts-tel">
                                 
-                                    <a href="<?php the_field('number_site'); ?>"><?php the_field('number_site'); ?></a>
-                                    <a href="<?php the_field('number_site'); ?>"><?php the_field('number_site_2'); ?></a>
+                                    <a href="<?php the_field('number_site', 159); ?>"><?php the_field('number_site', 159); ?></a>
+                                    <a href="<?php the_field('number_site', 159); ?>"><?php the_field('number_site_2', 159); ?></a>
                                 </div>
                             </div>
                             <div class="header__contacts-item">
                                 <img src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/svg/pointer.svg" alt="указатель" class="header__contacts-logo">
-                                <address><?php the_field('street'); ?>/address>
+                                <address><?php the_field('street', 159); ?></address>
                             </div>
                         </div>
                     </div>
                 </div>
                 <nav class="row" data-slide="1">
-                    <ul class="header__nav">
-                        <li>
-                            <a class="header__nav-item" href="#about">Про компанию</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#specialists">Наша команда</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#toys">Игрушки</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#aboutus">Наша история</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#contacts">Контакты и отзывы</a>
-                        </li>
-                    </ul>
+                    <?php 
+                        wp_nav_menu( [
+                            'menu'            => 'Main', 
+                            'container'       => false, 
+                            'menu_class'      => 'header__nav', 
+                            'echo'            => true,
+                            'fallback_cb'     => 'wp_page_menu',
+                            'items_wrap'      => '<ul class="header__nav">%3$s</ul>',
+                            'depth'           => 1
+                        ] );
+                    ?>
                 </nav>
             </div>
             <div class="header__hamburger">
