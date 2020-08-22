@@ -39,8 +39,8 @@
                                 <img src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/svg/phone.svg" alt="телефон" class="header__contacts-logo">
                                 <div class="header__contacts-tel">
                                 
-                                    <a href="<?php the_field('number_site', 159); ?>"><?php the_field('number_site', 159); ?></a>
-                                    <a href="<?php the_field('number_site', 159); ?>"><?php the_field('number_site_2', 159); ?></a>
+                                    <a href="<?php the_field('number_site', 159); ?>" >+<?php the_field('number_site', 159); ?></a>
+                                    <a href="<?php the_field('number_site', 159); ?>">+<?php the_field('number_site_2', 159); ?></a>
                                 </div>
                             </div>
                             <div class="header__contacts-item">
